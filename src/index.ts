@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/prefer-default-export,perfectionist/sort-modules */
 // Global Types
 import type {
   Request as $Request,
@@ -9,7 +9,6 @@ import type {
 import os from 'os';
 import osUtils from 'node-os-utils'; // Types
 
-type $LoadValue = Array<number>;
 type $DiskValue = {
   freeGb: string;
   freePercentage: string;
@@ -17,15 +16,16 @@ type $DiskValue = {
   usedGb: string;
   usedPercentage: string;
 };
+type $UptimeValue = {
+  container: number;
+  os: number;
+};
+type $LoadValue = Array<number>;
 type $MemValue = {
   freeMemMb: number;
   freeMemPercentage: number;
   totalMemMb: number;
   usedMemMb: number;
-};
-type $UptimeValue = {
-  container: number;
-  os: number;
 };
 type $SystemValues = {
   disk: $DiskValue;
@@ -33,7 +33,6 @@ type $SystemValues = {
   mem: $MemValue;
   uptime: $UptimeValue;
 };
-
 type $GetSystemValues = () => Promise<$SystemValues>;
 
 const getSystemValues: $GetSystemValues = async () => {
