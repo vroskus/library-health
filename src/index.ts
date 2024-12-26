@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export,perfectionist/sort-modules */
+/* eslint-disable import/prefer-default-export */
 // Global Types
 import type {
   Request as $Request,
